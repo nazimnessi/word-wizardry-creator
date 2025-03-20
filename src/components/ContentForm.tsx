@@ -19,7 +19,9 @@ const ContentForm = ({ onGenerate, isLoading }: ContentFormProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onGenerate(guidelines, contentType, topic);
+    if (guidelines && topic) {
+      onGenerate(guidelines, contentType, topic);
+    }
   };
 
   return (
